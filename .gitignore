@@ -4,4 +4,5 @@
 !/src
 !pom.xml
 !readme.md
+!redis.sh
 redis-ext.properties
