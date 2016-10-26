@@ -22,7 +22,7 @@ public class C extends HttpServlet {
 	public void init() throws ServletException {
 		super.init();
 		Map<String,String> cfs=Resources.init("redis");
-		imgRepo=cfs.get("img-repo").contains(File.separator) ? cfs.get("img-repo") : ("c:\\"+cfs.get("img-repo").replace("/", File.separator));
+		imgRepo=Path.toLocalPath(cfs.get("img-repo"));
 		rdm=new RedisDM(cfs.get("host"), Integer.parseInt(cfs.get("port")), cfs.get("auth"));
 	}
 	
